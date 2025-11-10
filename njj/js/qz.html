@@ -1,0 +1,44 @@
+<html>
+<head>
+</head>
+<body>
+<h1 align="center">Quiz</h1>
+<script>
+function mark(){
+let score=0;
+if(document.getElementById("a").checked)
+{
+score++;
+}
+if(document.getElementById("n").checked)
+{
+score++;
+}
+if(document.getElementById("k").checked)
+{
+score++;
+}
+document.getElementById("s").innerHTML="SCORE:"+score;
+}
+</script>
+<h1>quiz</h1>
+<h2>what is the fullform of js</h2>
+<input type="radio" name="in" id="a">java script</input><br>
+<input type="radio" name="in">java script</input><br>
+<input type="radio" name="in">java script</input><br>
+<input type="radio" name="in">java script</input><br>
+<h2>what is the fullform of css</h2>
+<input type="radio" name="i" >java script</input><br>
+<input type="radio" name="i" id="n">cascading stylesheet</input><br>
+<input type="radio" name="i" >java script</input><br>
+<input type="radio" name="i">java script</input><br>
+<h2>what is the fullform of html</h2>
+<input type="radio" name="n" >java script</input><br>
+<input type="radio" name="n" id="k">hypertxt markup kanguage</input><br>
+<input type="radio" name="n" >java script</input><br>
+<input type="radio" name="n" >java script</input><br>
+<h3 id="s">SCORE:</h3>
+<input type="submit" onclick="mark()">
+</body>
+</html>
+

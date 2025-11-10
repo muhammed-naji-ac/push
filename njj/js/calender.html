@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Single Month Calendar</h2>
+
+Year: <input type="number" id="year" placeholder="2025">
+Month: <input type="number" id="month" placeholder="1-12">
+<button onclick="showCalendar()">Show</button>
+
+<pre id="cal"></pre>
+
+<script>
+function showCalendar() {
+  let y = parseInt(document.getElementById("year").value);
+  let m = parseInt(document.getElementById("month").value) - 1;
+  let out = document.getElementById("cal");
+
+  if (isNaN(y) || isNaN(m) || m < 0 || m > 11) {
+    out.textContent = "Enter valid year and month (1-12)";
+    return;
+  }
+
+  const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+
+  let res = `${months[m]} ${y}\n${days.join(" ")}\n`;
+
+  let first = new Date(y, m, 1).getDay();
+  let daysInMonth = new Date(y, m+1, 0).getDate();
+
+  let line = "    ".repeat(first);
+  for (let d=1; d<=daysInMonth; d++) {
+    line += d.toString().padStart(3," ") + " ";
+    if ((first+d)%7===0 || d===daysInMonth) { res += line + "\n"; line=""; }
+  }
+
+  out.textContent = res;
+}
+</script>
+
+</body>
+</html>
+

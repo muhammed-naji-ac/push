@@ -1,0 +1,16 @@
+.h1{
+font-style:italic;
+text-align:center;
+color:red;
+}
+.p{
+font-style:italic;
+text-align:center;
+color:gray;
+}
+.img{
+border-radius:1000px;
+width:1000px;
+height:1000px;
+align:center;
+}
